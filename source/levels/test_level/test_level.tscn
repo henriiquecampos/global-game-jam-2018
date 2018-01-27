@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://actors/player/player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://objects/spawner/spawner.tscn" type="PackedScene" id=2]
-[ext_resource path="res://objects/router/router.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/spawner/spawner.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/router/router.tscn" type="PackedScene" id=2]
+[ext_resource path="res://actors/player/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://actors/player/player_one_anim.tres" type="SpriteFrames" id=4]
+[ext_resource path="res://interface/scores/scores.tscn" type="PackedScene" id=5]
 
 [sub_resource type="GDScript" id=1]
 
@@ -38,7 +40,7 @@ script = SubResource( 1 )
 anchor_mode = 0
 rotating = false
 current = true
-zoom = Vector2( 2, 2 )
+zoom = Vector2( 1, 1 )
 limit_left = -10000000
 limit_top = -10000000
 limit_right = 10000000
@@ -59,77 +61,85 @@ editor_draw_limits = false
 editor_draw_drag_margin = false
 script = SubResource( 2 )
 
-[node name="Player" parent="." index="1" instance=ExtResource( 1 )]
+[node name="Spawn" parent="." index="1" instance=ExtResource( 1 )]
 
-position = Vector2( 322.5, 165.5 )
+position = Vector2( 688, 0 )
+min_spawn_time = 15.0
+max_spawn_time = 30.0
+max_amount = 3
 
-[node name="Player2" parent="." index="2" instance=ExtResource( 1 )]
+[node name="Spawn2" parent="." index="2" instance=ExtResource( 1 )]
 
-position = Vector2( 2482.5, 971.5 )
+position = Vector2( 1280, 352 )
+min_spawn_time = 15.0
+max_spawn_time = 30.0
+max_amount = 3
+
+[node name="Spawn3" parent="." index="3" instance=ExtResource( 1 )]
+
+position = Vector2( 0, 360 )
+min_spawn_time = 15.0
+max_spawn_time = 30.0
+max_amount = 3
+
+[node name="Spawn4" parent="." index="4" instance=ExtResource( 1 )]
+
+position = Vector2( 784, 720 )
+min_spawn_time = 15.0
+max_spawn_time = 30.0
+max_amount = 3
+
+[node name="Router" parent="." index="5" instance=ExtResource( 2 )]
+
+position = Vector2( 144, 120 )
+
+[node name="Router2" parent="." index="6" instance=ExtResource( 2 )]
+
+position = Vector2( 1136, 120 )
+
+[node name="Router3" parent="." index="7" instance=ExtResource( 2 )]
+
+position = Vector2( 960, 288 )
+
+[node name="Router4" parent="." index="8" instance=ExtResource( 2 )]
+
+position = Vector2( 408, 152 )
+
+[node name="Router5" parent="." index="9" instance=ExtResource( 2 )]
+
+position = Vector2( 632, 296 )
+
+[node name="Router6" parent="." index="10" instance=ExtResource( 2 )]
+
+position = Vector2( 280, 424 )
+
+[node name="Router7" parent="." index="11" instance=ExtResource( 2 )]
+
+position = Vector2( 1104, 432 )
+
+[node name="Player" parent="." index="12" instance=ExtResource( 3 )]
+
+editor/display_folded = true
+position = Vector2( 32, 496 )
+
+[node name="Sprite" parent="Player" index="2"]
+
+frames = ExtResource( 4 )
+animation = "idle"
+
+[node name="Player2" parent="." index="13" instance=ExtResource( 3 )]
+
+editor/display_folded = true
+position = Vector2( 1256, 216 )
 player = "P2"
 
-[node name="Spawn" parent="." index="3" instance=ExtResource( 2 )]
+[node name="Sprite" parent="Player2" index="2"]
 
-position = Vector2( 1275, 15 )
-min_spawn_time = 15.0
-max_spawn_time = 30.0
-max_amount = 3
+frame = 1
+flip_h = true
 
-[node name="Spawn2" parent="." index="4" instance=ExtResource( 2 )]
-
-position = Vector2( 2559, 835 )
-min_spawn_time = 15.0
-max_spawn_time = 30.0
-max_amount = 3
-
-[node name="Spawn3" parent="." index="5" instance=ExtResource( 2 )]
-
-position = Vector2( 15, 839 )
-min_spawn_time = 15.0
-max_spawn_time = 30.0
-max_amount = 3
-
-[node name="Spawn4" parent="." index="6" instance=ExtResource( 2 )]
-
-position = Vector2( 1315, 1449 )
-min_spawn_time = 15.0
-max_spawn_time = 30.0
-max_amount = 3
-
-[node name="Router" parent="." index="7" instance=ExtResource( 3 )]
-
-position = Vector2( 571, 439 )
-
-[node name="Router9" parent="." index="8" instance=ExtResource( 3 )]
-
-position = Vector2( 143, 415 )
-
-[node name="Router2" parent="." index="9" instance=ExtResource( 3 )]
-
-position = Vector2( 1187, 803 )
-
-[node name="Router3" parent="." index="10" instance=ExtResource( 3 )]
-
-position = Vector2( 1271, 443 )
-
-[node name="Router4" parent="." index="11" instance=ExtResource( 3 )]
-
-position = Vector2( 383, 1183 )
-
-[node name="Router5" parent="." index="12" instance=ExtResource( 3 )]
-
-position = Vector2( 1919, 1091 )
-
-[node name="Router6" parent="." index="13" instance=ExtResource( 3 )]
-
-position = Vector2( 2107, 235 )
-
-[node name="Router7" parent="." index="14" instance=ExtResource( 3 )]
-
-position = Vector2( 1727, 639 )
-
-[node name="Router8" parent="." index="15" instance=ExtResource( 3 )]
-
-position = Vector2( 987, 1259 )
+[node name="Scores" parent="." index="14" instance=ExtResource( 5 )]
 
 
+[editable path="Player"]
+[editable path="Player2"]

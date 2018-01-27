@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/hacker 14.png-8caa2573bdebe8ee6f2099faddf84bd4.stex"
+
+[deps]
+
+source_file="res://actors/player/hack_02/Hacking/hacker 14.png"
+source_md5="401165ef6c5cbb3cefae5db30809d06a"
+
+dest_files=[ "res://.import/hacker 14.png-8caa2573bdebe8ee6f2099faddf84bd4.stex" ]
+dest_md5="68b80eb52e44d2fb15dfc1d9b6fe1774"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

@@ -1,13 +1,10 @@
 extends "../moving_character.gd"
 
-var money = 100 setget set_money
 var towers = []
 var target
 var can_wander = true
 var move_dir = Vector2()
 var spawner = null
-func set_money(value):
-	money -= value
 	
 func set_speed(value):
 	speed = value
@@ -16,7 +13,10 @@ func get_speed():
 	return(speed)
 
 func money_timeout():
-	set_money(1)
+	if target == null:
+		return
+	
+	$"../Scores".set_score(target.player, 100)
 	
 func _ready():
 	set_physics_process(false)
@@ -43,8 +43,8 @@ func seek_tower():
 		else:
 			if t.strength > target.strength:
 				target = t
-	print("seeking")
-	if target.get_player() != "NONE" and global_position.distance_to(target.global_position) > 40:
+	if target.get_player() != "NONE":
+		$Money.start()
 		return((target.get_global_position() - get_global_position()).normalized())
 	else:
 		return(wander())
@@ -59,6 +59,7 @@ func toogle_wander():
 		#move
 		$Wander.set_wait_time(rand_range(0.5, 1.0))
 		can_wander = false
+		$Sprite.play("idle")
 	else:
 		#wait
 		$Wander.set_wait_time(rand_range(2, 4))
@@ -67,6 +68,11 @@ func toogle_wander():
 		else:
 			move_dir = wander()
 		can_wander = true
+		if move_dir.x > 0:
+			$Sprite.set_flip_h(false)
+		else:
+			$Sprite.set_flip_h(true)
+		$Sprite.play("walking")
 
 func _on_patience_timeout():
 	set_physics_process(false)
@@ -79,6 +85,11 @@ func leave_screen():
 	print(time)
 	t.interpolate_method(self, "set_global_position", get_global_position(), spawner.get_global_position(),
 		time, t.TRANS_LINEAR, t.EASE_IN)
+	$Sprite.play("walking")
+	if (spawner.get_global_position() - self.get_global_position()).normalized().x > 0:
+		$Sprite.scale.x = -1
+	else:
+		$Sprite.scale.x = 1
 	$Shape.set_disabled(true)
 	t.start()
 	yield(t, "tween_completed")
