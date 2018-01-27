@@ -5,24 +5,24 @@ var target
 var can_wander = true
 var move_dir = Vector2()
 var spawner = null
-	
+
+func _ready():
+
+	set_physics_process(false)
+	yield($Wander, "timeout")
+	set_physics_process(true)
+	$Money.connect("timeout", self, "money_timeout")
+
+func money_timeout():
+	if target == null:
+		return
+	$"../Scores".set_score(target.player, 100)
+
 func set_speed(value):
 	speed = value
 
 func get_speed():
 	return(speed)
-
-func money_timeout():
-	if target == null:
-		return
-	
-	$"../Scores".set_score(target.player, 100)
-	
-func _ready():
-	set_physics_process(false)
-	yield($Wander, "timeout")
-	set_physics_process(true)
-	$Money.connect("timeout", self, "money_timeout")
 
 func _physics_process(delta):
 	if can_wander:
@@ -51,7 +51,6 @@ func seek_tower():
 		
 func wander():
 	var direction = Vector2(rand_range(-50, 50), rand_range(-50, 50))
-	print("wandering")
 	return(direction.normalized())
 	
 func toogle_wander():
@@ -84,7 +83,7 @@ func leave_screen():
 	var time = dist / get_speed()
 	print(time)
 	t.interpolate_method(self, "set_global_position", get_global_position(), spawner.get_global_position(),
-		time, t.TRANS_LINEAR, t.EASE_IN)
+		time * 2, t.TRANS_LINEAR, t.EASE_IN)
 	$Sprite.play("walking")
 	if get_global_position().x > spawner.get_global_position().x:
 		$Sprite.scale.x = -1
