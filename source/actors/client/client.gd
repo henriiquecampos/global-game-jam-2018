@@ -17,6 +17,8 @@ func _ready():
 func _physics_process(delta):
 	if can_wander:
 		movement(move_dir)
+	else:
+		seek_tower()
 	
 func _on_area_entered(area):
 	if area.is_in_group("tower"):
@@ -29,7 +31,14 @@ func _on_area_exited(area):
 func seek_tower():
 	if towers.size() > 0:
 		$Wander.stop()
+		for t in towers:
+			if target == null:
+				target = t
+			else:
+				if t.power > target.power:
+					target = t
 		movement((get_global_position() - target.get_global_position()).normalized())
+					
 	else:
 		$Wander.start()
 		
