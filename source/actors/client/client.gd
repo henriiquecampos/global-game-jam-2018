@@ -86,7 +86,7 @@ func leave_screen():
 	t.interpolate_method(self, "set_global_position", get_global_position(), spawner.get_global_position(),
 		time, t.TRANS_LINEAR, t.EASE_IN)
 	$Sprite.play("walking")
-	if (spawner.get_global_position() - self.get_global_position()).normalized().x > 0:
+	if get_global_position().x > spawner.get_global_position().x:
 		$Sprite.scale.x = -1
 	else:
 		$Sprite.scale.x = 1
