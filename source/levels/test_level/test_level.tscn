@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://actors/player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/spawner/spawner.tscn" type="PackedScene" id=2]
-[ext_resource path="res://objects/router/router.tscn" type="PackedScene" id=3]
 
 [sub_resource type="GDScript" id=1]
 
@@ -26,7 +25,7 @@ script/source = "extends Camera2D
 func _ready():
 	print(get_viewport().size)"
 
-[node name="TestLevel" type="YSort" groups=[
+[node name="TestLevel" type="YSort" index="0" groups=[
 "level",
 ]]
 
@@ -95,10 +94,5 @@ position = Vector2( 1323, 1425 )
 min_spawn_time = 15.0
 max_spawn_time = 30.0
 max_amount = 3
-
-[node name="Router" parent="." index="7" instance=ExtResource( 3 )]
-
-position = Vector2( 646.848, 378.793 )
-charging_time = 2.0
 
 

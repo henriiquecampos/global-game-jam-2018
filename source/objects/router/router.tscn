@@ -32,7 +32,6 @@ animations = [ {
 
 [node name="Router" type="StaticBody2D" index="0"]
 
-position = Vector2( 222, 92 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -41,7 +40,8 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 script = ExtResource( 1 )
-charging_time = 9.726
+_sections_unfolded = [ "Transform" ]
+charging_time = 8.0
 
 [node name="Shape" type="CollisionShape2D" parent="." index="0"]
 
@@ -66,6 +66,7 @@ shape = SubResource( 2 )
 
 frames = SubResource( 3 )
 animation = "idle"
+frame = 1
 playing = true
 
 [node name="CaptureTime" type="Timer" parent="." index="3"]
