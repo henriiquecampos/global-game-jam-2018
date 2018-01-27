@@ -11,7 +11,7 @@ script = ExtResource( 2 )
 speed = 300.0
 player = "P1"
 
-[node name="Sprite" parent="." index="1"]
+[node name="Sprite" parent="." index="0"]
 
 texture = ExtResource( 3 )
 
