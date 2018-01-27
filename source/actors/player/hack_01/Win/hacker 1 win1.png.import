@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/hacker 1 win1.png-3a2c8f7a21f5caeee4c6bb673f6235ed.stex"
+
+[deps]
+
+source_file="res://actors/player/hack_01/Win/hacker 1 win1.png"
+source_md5="7378d2abdfecf56db6c6183d53341fe3"
+
+dest_files=[ "res://.import/hacker 1 win1.png-3a2c8f7a21f5caeee4c6bb673f6235ed.stex" ]
+dest_md5="2c1fe81b6bb7d6605e75d60994fb96e4"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

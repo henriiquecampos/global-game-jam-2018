@@ -5,6 +5,8 @@ var interactable = null
 
 func dominance(tower):
 	if tower != null:
+		print("domine")
+		$Sprite.play("hacking")
 		$Input.set_physics_process(false)
 		tower.set_player(player)
 		yield(tower, "captured")

@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/hacker 1 defeat1.png-c7d6662667f239620c202d5d3016d285.stex"
+
+[deps]
+
+source_file="res://actors/player/hack_01/Defeat/hacker 1 defeat1.png"
+source_md5="3114f7d4d3cc070960b95341d0eb2e9b"
+
+dest_files=[ "res://.import/hacker 1 defeat1.png-c7d6662667f239620c202d5d3016d285.stex" ]
+dest_md5="ce91e6640a05d93a3851dbd446b9c1e1"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

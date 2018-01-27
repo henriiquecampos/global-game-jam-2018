@@ -9,12 +9,12 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 16, 15 )
+extents = Vector2( 16, 11 )
 
 [sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 479.895
+radius = 300.0
 
 [sub_resource type="SpriteFrames" id=3]
 
@@ -102,7 +102,7 @@ charging_time = 8.0
 
 [node name="Shape" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( 0, 18 )
+position = Vector2( 0, 21 )
 shape = SubResource( 1 )
 
 [node name="Range" type="Area2D" parent="." index="1" groups=[
@@ -127,6 +127,7 @@ frames = SubResource( 3 )
 animation = "idle"
 frame = 1
 playing = true
+_sections_unfolded = [ "Transform" ]
 
 [node name="CaptureTime" type="Timer" parent="." index="3"]
 
