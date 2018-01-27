@@ -13,7 +13,6 @@ extents = Vector2( 8, 16 )
 
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
-speed = 300.0
 
 [node name="Shape" parent="." index="0"]
 
@@ -31,7 +30,7 @@ _sections_unfolded = [ "Visibility" ]
 
 process_mode = 1
 wait_time = 1.0
-one_shot = true
+one_shot = false
 autostart = false
 
 [node name="Wander" type="Timer" parent="." index="4"]

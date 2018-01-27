@@ -13,12 +13,12 @@ extents = Vector2( 13, 34 )
 [node name="Player" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
-speed = 300.0
+speed = 200.0
 player = "P1"
 
 [node name="Shape" parent="." index="0"]
 
-position = Vector2( -3, 3 )
+position = Vector2( -4, 20 )
 
 [node name="Shape" parent="Area2D" index="0"]
 
@@ -29,6 +29,7 @@ shape = SubResource( 1 )
 
 frames = ExtResource( 3 )
 animation = "win"
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform" ]
 

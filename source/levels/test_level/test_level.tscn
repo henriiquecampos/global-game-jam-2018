@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://objects/spawner/spawner.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/router/router.tscn" type="PackedScene" id=2]
 [ext_resource path="res://actors/player/player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://actors/player/player_one_anim.tres" type="SpriteFrames" id=4]
+[ext_resource path="res://interface/scores/scores.tscn" type="PackedScene" id=5]
 
 [sub_resource type="GDScript" id=1]
 
@@ -90,60 +91,54 @@ max_amount = 3
 
 [node name="Router" parent="." index="5" instance=ExtResource( 2 )]
 
-position = Vector2( 248, 112 )
+position = Vector2( 144, 120 )
 
 [node name="Router2" parent="." index="6" instance=ExtResource( 2 )]
 
-position = Vector2( 456, 240 )
+position = Vector2( 1136, 120 )
 
 [node name="Router3" parent="." index="7" instance=ExtResource( 2 )]
 
-position = Vector2( 1064, 360 )
+position = Vector2( 960, 288 )
 
 [node name="Router4" parent="." index="8" instance=ExtResource( 2 )]
 
-position = Vector2( 704, 496 )
+position = Vector2( 408, 152 )
 
 [node name="Router5" parent="." index="9" instance=ExtResource( 2 )]
 
-position = Vector2( 176, 568 )
+position = Vector2( 632, 296 )
 
 [node name="Router6" parent="." index="10" instance=ExtResource( 2 )]
 
-position = Vector2( 432, 472 )
+position = Vector2( 280, 424 )
 
 [node name="Router7" parent="." index="11" instance=ExtResource( 2 )]
 
-position = Vector2( 992, 592 )
+position = Vector2( 1104, 432 )
 
-[node name="Router8" parent="." index="12" instance=ExtResource( 2 )]
-
-position = Vector2( 752, 184 )
-
-[node name="Router9" parent="." index="13" instance=ExtResource( 2 )]
-
-position = Vector2( 1056, 104 )
-
-[node name="Player" parent="." index="14" instance=ExtResource( 3 )]
+[node name="Player" parent="." index="12" instance=ExtResource( 3 )]
 
 editor/display_folded = true
-position = Vector2( 150, 230 )
+position = Vector2( 32, 496 )
 
 [node name="Sprite" parent="Player" index="2"]
 
 frames = ExtResource( 4 )
 animation = "idle"
 
-[node name="Player2" parent="." index="15" instance=ExtResource( 3 )]
+[node name="Player2" parent="." index="13" instance=ExtResource( 3 )]
 
 editor/display_folded = true
-position = Vector2( 786, 456 )
+position = Vector2( 1256, 216 )
 player = "P2"
 
 [node name="Sprite" parent="Player2" index="2"]
 
 frame = 1
 flip_h = true
+
+[node name="Scores" parent="." index="14" instance=ExtResource( 5 )]
 
 
 [editable path="Player"]
