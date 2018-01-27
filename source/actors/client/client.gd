@@ -6,8 +6,16 @@ var can_wander = true
 var move_dir = Vector2()
 var spawner = null
 
-func _ready():
+export (SpriteFrames) var var_01
+export (SpriteFrames) var var_02
+export (SpriteFrames) var var_03
+export (SpriteFrames) var var_04
 
+onready var frames = [var_01, var_02, var_03, var_04]
+func _ready():
+	randomize()
+	var s = randi()%frames.size()
+	$Sprite.set_sprite_frames(frames[s])
 	set_physics_process(false)
 	yield($Wander, "timeout")
 	set_physics_process(true)
@@ -78,17 +86,16 @@ func _on_patience_timeout():
 	leave_screen()
 	
 func leave_screen():
+	$Sprite.play("walking")
 	var t = $Tween
 	var dist = (global_position.distance_to(spawner.global_position))
 	var time = dist / get_speed()
-	print(time)
 	t.interpolate_method(self, "set_global_position", get_global_position(), spawner.get_global_position(),
 		time * 2, t.TRANS_LINEAR, t.EASE_IN)
-	$Sprite.play("walking")
 	if get_global_position().x > spawner.get_global_position().x:
-		$Sprite.scale.x = -1
-	else:
 		$Sprite.scale.x = 1
+	else:
+		$Sprite.scale.x = -1
 	$Shape.set_disabled(true)
 	t.start()
 	yield(t, "tween_completed")

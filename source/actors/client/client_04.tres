@@ -1,12 +1,11 @@
 [gd_resource type="SpriteFrames" load_steps=7 format=2]
 
-[ext_resource path="res://actors/client/01/client01 Idle1.png" type="Texture" id=1]
-[ext_resource path="res://actors/client/01/client01 Idle2.png" type="Texture" id=2]
-[ext_resource path="res://actors/client/01/client01 Walk1.png" type="Texture" id=3]
-[ext_resource path="res://actors/client/01/client01 Walk2.png" type="Texture" id=4]
-[ext_resource path="res://actors/client/01/client01 Walk3.png" type="Texture" id=5]
-[ext_resource path="res://actors/client/01/client01 Walk4.png" type="Texture" id=6]
-
+[ext_resource path="res://actors/client/04/Client04 Idle1.png" type="Texture" id=1]
+[ext_resource path="res://actors/client/04/Client04 Idle2.png" type="Texture" id=2]
+[ext_resource path="res://actors/client/04/client04 walk1.png" type="Texture" id=3]
+[ext_resource path="res://actors/client/04/client04 walk2.png" type="Texture" id=4]
+[ext_resource path="res://actors/client/04/client04 walk3.png" type="Texture" id=5]
+[ext_resource path="res://actors/client/04/client04 walk4.png" type="Texture" id=6]
 
 [resource]
 

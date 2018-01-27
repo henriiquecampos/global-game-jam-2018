@@ -2,9 +2,17 @@ extends Node
 onready var init_text = get_node("Panel/P1").get_text()
 var p1_score = 0
 var p2_score = 0
+var seconds = 180
+var minutes = seconds/60
+onready var time_text = $Panel/Time.get_text()
 func _ready():
 	set_score("P1", 0)
 	set_score("P2", 0)
+	
+func _process(delta):
+	seconds -= delta
+	minutes = int(floor(seconds/60))
+	$Panel/Time.set_text(time_text.format({"minutes": minutes, "seconds":seconds}))
 func set_score(which, amount):
 	if which == "P1":
 		p1_score += amount
