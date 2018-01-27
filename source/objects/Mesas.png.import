@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hacker 1 idle2.png-607d779b2efe33c7c27f0c58e237e2c8.stex"
+path="res://.import/Mesas.png-a201bc5c5b3786d0ef37960e97f4a02b.stex"
 
 [deps]
 
-source_file="res://actors/player/hack_01/Idle/hacker 1 idle2.png"
-source_md5="3087e9a9425c7bf9838da6e976965b53"
+source_file="res://objects/Mesas.png"
+source_md5="af8ba3a0f5017bd25c10ee1294ad36dc"
 
-dest_files=[ "res://.import/hacker 1 idle2.png-607d779b2efe33c7c27f0c58e237e2c8.stex" ]
-dest_md5="55c17c90dd5554d484aed541d2d3e4a1"
+dest_files=[ "res://.import/Mesas.png-a201bc5c5b3786d0ef37960e97f4a02b.stex" ]
+dest_md5="c1d496f99c7cd308982cf6f6901ca5a1"
 
 [params]
 

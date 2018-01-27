@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hacker 1 idle2.png-607d779b2efe33c7c27f0c58e237e2c8.stex"
+path="res://.import/Luminária.png-ed465d636b7cf51839d65682ba36a0db.stex"
 
 [deps]
 
-source_file="res://actors/player/hack_01/Idle/hacker 1 idle2.png"
-source_md5="3087e9a9425c7bf9838da6e976965b53"
+source_file="res://objects/Luminária.png"
+source_md5="fa32a571c26ba11e10520c06c1598673"
 
-dest_files=[ "res://.import/hacker 1 idle2.png-607d779b2efe33c7c27f0c58e237e2c8.stex" ]
-dest_md5="55c17c90dd5554d484aed541d2d3e4a1"
+dest_files=[ "res://.import/Luminária.png-ed465d636b7cf51839d65682ba36a0db.stex" ]
+dest_md5="4a5424e2ec526b4b92f82ab90b9d9eff"
 
 [params]
 

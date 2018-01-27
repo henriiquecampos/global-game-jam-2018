@@ -7,10 +7,10 @@ path="res://.import/hacker 1 idle1.png-c0fe239ca796228b52b5ee8a35556e25.stex"
 [deps]
 
 source_file="res://actors/player/hack_01/Idle/hacker 1 idle1.png"
-source_md5="2de0a08a102c3bec5b7ad0ee3985095b"
+source_md5="8ce5b79d8710fa7fade364441ba5b985"
 
 dest_files=[ "res://.import/hacker 1 idle1.png-c0fe239ca796228b52b5ee8a35556e25.stex" ]
-dest_md5="c4edcc60ff67d7b94465a7bb70c6c0a4"
+dest_md5="14fcad52dfea785e88ca61eb21377387"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -28,5 +28,5 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
