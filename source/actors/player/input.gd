@@ -12,13 +12,13 @@ func _ready():
 	else:
 		device = 0
 func _physics_process(delta):
-	dir = Vector2(Input.get_joy_axis(device,0), Input.get_joy_axis(device,1))
+	dir = Vector2(int(Input.get_joy_axis(device,0)), int(Input.get_joy_axis(device,1)))
 	parent.movement(dir)
 	
 	if Input.is_action_just_pressed(parent.player + "_RIGHT"):
-		$"../Sprite".set_flip_h(false)
+		$"../Sprite".scale.x = 1
 	elif Input.is_action_just_pressed(parent.player + "_LEFT"):
-		$"../Sprite".set_flip_h(true)
+		$"../Sprite".scale.x = -1
 	if Input.is_action_just_pressed(parent.player + "_ACTION"):
 		parent.dominance(parent.interactable)
 		
@@ -28,5 +28,3 @@ func _input(event):
 			$"../Sprite".play("walking")
 		else:
 			$"../Sprite".play("idle")
-		print(Input.get_joy_axis(0,1))
-		print(Input.get_joy_axis(0,0))

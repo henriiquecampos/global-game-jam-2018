@@ -16,7 +16,7 @@ extents = Vector2( 16, 11 )
 [sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 400.0
+radius = 191.003
 
 [sub_resource type="SpriteFrames" id=3]
 
@@ -127,7 +127,6 @@ shape = SubResource( 2 )
 
 frames = SubResource( 3 )
 animation = "idle"
-frame = 1
 playing = true
 _sections_unfolded = [ "Transform" ]
 
