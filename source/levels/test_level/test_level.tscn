@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://actors/player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/spawner/spawner.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/router/router.tscn" type="PackedScene" id=3]
 
 [sub_resource type="GDScript" id=1]
 
@@ -76,23 +77,59 @@ max_amount = 3
 
 [node name="Spawn2" parent="." index="4" instance=ExtResource( 2 )]
 
-position = Vector2( 2555, 679 )
+position = Vector2( 2559, 835 )
 min_spawn_time = 15.0
 max_spawn_time = 30.0
 max_amount = 3
 
 [node name="Spawn3" parent="." index="5" instance=ExtResource( 2 )]
 
-position = Vector2( 15, 647 )
+position = Vector2( 15, 839 )
 min_spawn_time = 15.0
 max_spawn_time = 30.0
 max_amount = 3
 
 [node name="Spawn4" parent="." index="6" instance=ExtResource( 2 )]
 
-position = Vector2( 1323, 1425 )
+position = Vector2( 1315, 1449 )
 min_spawn_time = 15.0
 max_spawn_time = 30.0
 max_amount = 3
+
+[node name="Router" parent="." index="7" instance=ExtResource( 3 )]
+
+position = Vector2( 571, 439 )
+
+[node name="Router9" parent="." index="8" instance=ExtResource( 3 )]
+
+position = Vector2( 143, 415 )
+
+[node name="Router2" parent="." index="9" instance=ExtResource( 3 )]
+
+position = Vector2( 1187, 803 )
+
+[node name="Router3" parent="." index="10" instance=ExtResource( 3 )]
+
+position = Vector2( 1271, 443 )
+
+[node name="Router4" parent="." index="11" instance=ExtResource( 3 )]
+
+position = Vector2( 383, 1183 )
+
+[node name="Router5" parent="." index="12" instance=ExtResource( 3 )]
+
+position = Vector2( 1919, 1091 )
+
+[node name="Router6" parent="." index="13" instance=ExtResource( 3 )]
+
+position = Vector2( 2107, 235 )
+
+[node name="Router7" parent="." index="14" instance=ExtResource( 3 )]
+
+position = Vector2( 1727, 639 )
+
+[node name="Router8" parent="." index="15" instance=ExtResource( 3 )]
+
+position = Vector2( 987, 1259 )
 
 

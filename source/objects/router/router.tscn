@@ -1,10 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://objects/router/router.gd" type="Script" id=1]
-[ext_resource path="res://objects/router/Router3.png" type="Texture" id=2]
-[ext_resource path="res://objects/router/Router4.png" type="Texture" id=3]
-[ext_resource path="res://objects/router/Router1.png" type="Texture" id=4]
-[ext_resource path="res://objects/router/Router2.png" type="Texture" id=5]
+[ext_resource path="res://objects/router/Router1.png" type="Texture" id=2]
+[ext_resource path="res://objects/router/Router2.png" type="Texture" id=3]
+[ext_resource path="res://objects/router/Router3.png" type="Texture" id=4]
+[ext_resource path="res://objects/router/Router4.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -14,23 +14,79 @@ extents = Vector2( 16, 15 )
 [sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 75.0
+radius = 479.895
 
 [sub_resource type="SpriteFrames" id=3]
 
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
-"name": "charging",
+"name": "idle",
 "speed": 4.0
 }, {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
-"name": "idle",
+"name": "charging",
 "speed": 4.0
 } ]
 
-[node name="Router" type="StaticBody2D" index="0"]
+[sub_resource type="Curve" id=4]
+
+min_value = 0.0
+max_value = 1.0
+bake_resolution = 100
+_data = [ Vector2( 0, 0.242188 ), 0.0, 0.785495, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+
+flags = 4
+width = 2048
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 2
+emission_box_extents = Vector3( 32, 16, 1 )
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 90.0
+flatness = 0.0
+gravity = Vector3( 0, -98, 0 )
+initial_velocity = 1.0
+initial_velocity_random = 0.0
+angular_velocity = 7.51096e-43
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 2.95
+scale_random = 0.0
+scale_curve = SubResource( 5 )
+color = Color( 1, 1, 1, 1 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Scale" ]
+
+[node name="Router" type="StaticBody2D" groups=[
+"routers",
+]]
 
 input_pickable = false
 collision_layer = 1
@@ -41,6 +97,7 @@ friction = 1.0
 bounce = 0.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
+player = "NONE"
 charging_time = 8.0
 
 [node name="Shape" type="CollisionShape2D" parent="." index="0"]
@@ -48,7 +105,9 @@ charging_time = 8.0
 position = Vector2( 0, 18 )
 shape = SubResource( 1 )
 
-[node name="Range" type="Area2D" parent="." index="1"]
+[node name="Range" type="Area2D" parent="." index="1" groups=[
+"ranges",
+]]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -72,18 +131,11 @@ playing = true
 [node name="CaptureTime" type="Timer" parent="." index="3"]
 
 process_mode = 1
-wait_time = 4.0
+wait_time = 2.0
 one_shot = false
 autostart = false
 
-[node name="Timer" type="Timer" parent="." index="4"]
-
-process_mode = 1
-wait_time = 1.0
-one_shot = true
-autostart = true
-
-[node name="ProgressBar" type="ProgressBar" parent="." index="5"]
+[node name="ProgressBar" type="ProgressBar" parent="." index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -107,7 +159,7 @@ exp_edit = false
 rounded = false
 percent_visible = true
 
-[node name="Tween" type="Tween" parent="." index="6"]
+[node name="Tween" type="Tween" parent="." index="5"]
 
 repeat = false
 playback_process_mode = 1
@@ -116,6 +168,29 @@ playback/active = false
 playback/repeat = false
 playback/speed = 1.0
 
-[connection signal="timeout" from="Timer" to="." method="set_player" binds= [ 1 ]]
+[node name="Particles2D" type="Particles2D" parent="." index="6"]
+
+self_modulate = Color( 1, 0, 0, 1 )
+emitting = true
+amount = 8
+lifetime = 1.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 6 )
+texture = null
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Textures", "Visibility" ]
+
+[connection signal="value_changed" from="ProgressBar" to="." method="_on_charge_bar_changed"]
 
 

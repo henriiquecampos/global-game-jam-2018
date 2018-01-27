@@ -19,40 +19,39 @@ func money_timeout():
 	set_money(1)
 	
 func _ready():
-	print(get_speed())
+	set_physics_process(false)
+	yield($Wander, "timeout")
+	set_physics_process(true)
 	$Money.connect("timeout", self, "money_timeout")
 
 func _physics_process(delta):
 	if can_wander:
 		movement(move_dir)
-	else:
-#		seek_tower()
-		pass
 	
 func _on_area_entered(area):
-	if area.is_in_group("tower"):
+	if area.is_in_group("ranges"):
 		towers.append(area.get_parent())
 		
 func _on_area_exited(area):
-	if area.is_in_group("tower"):
-		towers.remove(area.find(area.get_parent()))
+	if area.is_in_group("ranges"):
+		towers.remove(towers.find(area.get_parent()))
 
 func seek_tower():
-	if towers.size() > 0:
-		$Wander.stop()
-		for t in towers:
-			if target == null:
+	for t in towers:
+		if target == null:
+			target = t
+		else:
+			if t.strength > target.strength:
 				target = t
-			else:
-				if t.power > target.power:
-					target = t
-		movement((get_global_position() - target.get_global_position()).normalized())
-					
+	print("seeking")
+	if target.get_player() != "NONE" and global_position.distance_to(target.global_position) > 40:
+		return((target.get_global_position() - get_global_position()).normalized())
 	else:
-		$Wander.start()
+		return(wander())
 		
 func wander():
 	var direction = Vector2(rand_range(-50, 50), rand_range(-50, 50))
+	print("wandering")
 	return(direction.normalized())
 	
 func toogle_wander():
@@ -63,7 +62,10 @@ func toogle_wander():
 	else:
 		#wait
 		$Wander.set_wait_time(rand_range(2, 4))
-		move_dir = wander()
+		if towers.size() > 0:
+			move_dir = seek_tower()
+		else:
+			move_dir = wander()
 		can_wander = true
 
 func _on_patience_timeout():
@@ -71,7 +73,6 @@ func _on_patience_timeout():
 	leave_screen()
 	
 func leave_screen():
-	print("leaving")
 	var t = $Tween
 	var dist = (global_position.distance_to(spawner.global_position))
 	var time = dist / get_speed()

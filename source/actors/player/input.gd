@@ -11,3 +11,6 @@ func _physics_process(delta):
 		parent.movement(Vector2(1, 0))
 	elif Input.is_action_pressed(parent.player + "_LEFT"):
 		parent.movement(Vector2(-1, 0))
+		
+	if Input.is_action_just_pressed(parent.player + "_ACTION"):
+		parent.dominance(parent.interactable)
