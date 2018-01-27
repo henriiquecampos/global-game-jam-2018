@@ -10,7 +10,7 @@ source_file="res://areas/tilemap/Furniture/Luminária.png"
 source_md5="fa32a571c26ba11e10520c06c1598673"
 
 dest_files=[ "res://.import/Luminária.png-78bd0d95c69860576bbdf3d8d7a61598.stex" ]
-dest_md5="2a44b748323ae01d0171006fe15c911c"
+dest_md5="4a5424e2ec526b4b92f82ab90b9d9eff"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -28,5 +28,5 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

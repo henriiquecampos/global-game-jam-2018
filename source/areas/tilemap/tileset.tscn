@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://areas/tilemap/Scenario/Tileset/ground.png" type="Texture" id=1]
 [ext_resource path="res://areas/tilemap/Furniture/Cadeiras.png" type="Texture" id=2]
@@ -7,10 +7,12 @@
 [ext_resource path="res://areas/tilemap/Furniture/Mesas.png" type="Texture" id=5]
 [ext_resource path="res://areas/tilemap/Furniture/Vaso 2.png" type="Texture" id=6]
 [ext_resource path="res://areas/tilemap/Furniture/Vaso.png" type="Texture" id=7]
-[ext_resource path="res://areas/tilemap/Scenario/Lojas/WcDonnalds.png" type="Texture" id=8]
-[ext_resource path="res://areas/tilemap/Scenario/Tileset/ground2.png" type="Texture" id=9]
+[ext_resource path="res://areas/tilemap/Scenario/Tileset/ground3.png" type="Texture" id=8]
+[ext_resource path="res://areas/tilemap/Scenario/Tileset/ground4.png" type="Texture" id=9]
+[ext_resource path="res://areas/tilemap/Scenario/Lojas/WcDonnalds.png" type="Texture" id=10]
+[ext_resource path="res://areas/tilemap/Scenario/Tileset/ground2.png" type="Texture" id=11]
 
-[node name="TileMap" type="Node2D" index="0"]
+[node name="TileMap" type="Node2D"]
 
 _sections_unfolded = [ "Cell" ]
 
@@ -51,14 +53,24 @@ texture = ExtResource( 6 )
 position = Vector2( 224, 32 )
 texture = ExtResource( 7 )
 
-[node name="WcDonnalds" type="Sprite" parent="." index="7"]
+[node name="ground3" type="Sprite" parent="." index="7"]
 
-position = Vector2( 320, 64 )
+position = Vector2( 96, 160 )
 texture = ExtResource( 8 )
 
-[node name="ground2" type="Sprite" parent="." index="8"]
+[node name="ground4" type="Sprite" parent="." index="8"]
 
-position = Vector2( 416, 32 )
+position = Vector2( 160, 160 )
 texture = ExtResource( 9 )
+
+[node name="WcDonnalds" type="Sprite" parent="." index="9"]
+
+position = Vector2( 320, 64 )
+texture = ExtResource( 10 )
+
+[node name="ground2" type="Sprite" parent="." index="10"]
+
+position = Vector2( 32, 160 )
+texture = ExtResource( 11 )
 
 

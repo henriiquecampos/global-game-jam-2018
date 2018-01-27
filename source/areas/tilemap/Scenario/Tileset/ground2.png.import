@@ -7,10 +7,10 @@ path="res://.import/ground2.png-ef3aa994de3ac5f3cd899289cebb6918.stex"
 [deps]
 
 source_file="res://areas/tilemap/Scenario/Tileset/ground2.png"
-source_md5="0481beffd7fac9272b9ae40e22f14f12"
+source_md5="e4c31a53539c49dbd9cd4a398cd82a77"
 
 dest_files=[ "res://.import/ground2.png-ef3aa994de3ac5f3cd899289cebb6918.stex" ]
-dest_md5="42d44586bb1e59f9a0d933130f297071"
+dest_md5="6df97deb0bb18361dc910a69ea47a153"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -28,5 +28,5 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

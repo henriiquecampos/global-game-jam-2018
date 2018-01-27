@@ -10,7 +10,7 @@ source_file="res://areas/tilemap/Furniture/Vaso.png"
 source_md5="13e25955b11837fd99d0b19cc950d82e"
 
 dest_files=[ "res://.import/Vaso.png-65dbdb82f27c1d7f19702fbcb1740a8b.stex" ]
-dest_md5="edd20d413815b83def6d3bee11116c51"
+dest_md5="3eb534c01bbaf8d57ff75b16d26cc181"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -28,5 +28,5 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
