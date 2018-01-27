@@ -6,12 +6,30 @@
 
 [node name="Client" index="0" instance=ExtResource( 1 )]
 
+position = Vector2( 709, 422 )
 script = ExtResource( 2 )
+speed = 300.0
 
 [node name="Sprite" parent="." index="1"]
 
 self_modulate = Color( 1, 0.414063, 0.414063, 1 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Visibility" ]
+
+[node name="Money" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[node name="Wander" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = true
+
+[connection signal="timeout" from="Wander" to="." method="toogle_wander"]
 
 
