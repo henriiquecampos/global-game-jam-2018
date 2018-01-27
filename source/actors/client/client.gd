@@ -59,6 +59,7 @@ func toogle_wander():
 		#move
 		$Wander.set_wait_time(rand_range(0.5, 1.0))
 		can_wander = false
+		$Sprite.play("idle")
 	else:
 		#wait
 		$Wander.set_wait_time(rand_range(2, 4))
@@ -67,6 +68,11 @@ func toogle_wander():
 		else:
 			move_dir = wander()
 		can_wander = true
+		if move_dir.x > 0:
+			$Sprite.set_flip_h(false)
+		else:
+			$Sprite.set_flip_h(true)
+		$Sprite.play("walking")
 
 func _on_patience_timeout():
 	set_physics_process(false)

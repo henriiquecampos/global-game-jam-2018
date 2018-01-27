@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/hacker 8.png-0c8b836524a38e8c5a5e1449baf05bfc.stex"
+
+[deps]
+
+source_file="res://actors/player/hack_02/Hacking/hacker 8.png"
+source_md5="f01ef09fd40ef894926e35780a495233"
+
+dest_files=[ "res://.import/hacker 8.png-0c8b836524a38e8c5a5e1449baf05bfc.stex" ]
+dest_md5="4c6c8f8affae1eb44a0365a61a4f6e58"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

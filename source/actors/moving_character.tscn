@@ -5,12 +5,12 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 32, 16 )
+extents = Vector2( 10, 29.5 )
 
 [sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 50.0
+radius = 35.0571
 
 [node name="KinematicBody2D" type="KinematicBody2D" groups=[
 "moving",
@@ -23,15 +23,13 @@ collision/safe_margin = 0.08
 script = ExtResource( 1 )
 speed = 100
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
-
-[node name="Shape" type="CollisionShape2D" parent="." index="1"]
+[node name="Shape" type="CollisionShape2D" parent="." index="0"]
 
 position = Vector2( 0, 16 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Area2D" type="Area2D" parent="." index="2"]
+[node name="Area2D" type="Area2D" parent="." index="1"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -44,6 +42,10 @@ audio_bus_name = "Master"
 [node name="Shape" type="CollisionShape2D" parent="Area2D" index="0"]
 
 shape = SubResource( 2 )
+
+[node name="Sprite" type="AnimatedSprite" parent="." index="2"]
+
+animation = "default"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_entered"]
 

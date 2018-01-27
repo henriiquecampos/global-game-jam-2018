@@ -1,9 +1,16 @@
 [gd_scene load_steps=7 format=2]
 
+<<<<<<< HEAD
 [ext_resource path="res://actors/player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/spawner/spawner.tscn" type="PackedScene" id=2]
 [ext_resource path="res://objects/router/router.tscn" type="PackedScene" id=3]
 [ext_resource path="res://areas/tilemap/navigation.tscn" type="PackedScene" id=4]
+=======
+[ext_resource path="res://objects/spawner/spawner.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/router/router.tscn" type="PackedScene" id=2]
+[ext_resource path="res://actors/player/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://actors/player/player_one_anim.tres" type="SpriteFrames" id=4]
+>>>>>>> development
 
 [sub_resource type="GDScript" id=1]
 
@@ -61,78 +68,78 @@ editor_draw_limits = false
 editor_draw_drag_margin = false
 script = SubResource( 2 )
 
-[node name="Player" parent="." index="1" instance=ExtResource( 1 )]
+[node name="Spawn" parent="." index="1" instance=ExtResource( 1 )]
 
-position = Vector2( 322.5, 165.5 )
-
-[node name="Player2" parent="." index="2" instance=ExtResource( 1 )]
-
-position = Vector2( 2482.5, 971.5 )
-player = "P2"
-
-[node name="Spawn" parent="." index="3" instance=ExtResource( 2 )]
-
-position = Vector2( 1275, 15 )
+position = Vector2( 1281, 1 )
 min_spawn_time = 15.0
 max_spawn_time = 30.0
 max_amount = 3
 
-[node name="Spawn2" parent="." index="4" instance=ExtResource( 2 )]
+[node name="Spawn2" parent="." index="2" instance=ExtResource( 1 )]
 
 position = Vector2( 2559, 835 )
 min_spawn_time = 15.0
 max_spawn_time = 30.0
 max_amount = 3
 
-[node name="Spawn3" parent="." index="5" instance=ExtResource( 2 )]
+[node name="Spawn3" parent="." index="3" instance=ExtResource( 1 )]
 
 position = Vector2( 15, 839 )
 min_spawn_time = 15.0
 max_spawn_time = 30.0
 max_amount = 3
 
-[node name="Spawn4" parent="." index="6" instance=ExtResource( 2 )]
+[node name="Spawn4" parent="." index="4" instance=ExtResource( 1 )]
 
 position = Vector2( 1315, 1449 )
 min_spawn_time = 15.0
 max_spawn_time = 30.0
 max_amount = 3
 
-[node name="Router" parent="." index="7" instance=ExtResource( 3 )]
+[node name="Router" parent="." index="5" instance=ExtResource( 2 )]
 
-position = Vector2( 571, 439 )
+position = Vector2( 577, 55 )
 
-[node name="Router9" parent="." index="8" instance=ExtResource( 3 )]
+[node name="Router2" parent="." index="6" instance=ExtResource( 2 )]
 
-position = Vector2( 143, 415 )
+position = Vector2( 1121, 315 )
 
-[node name="Router2" parent="." index="9" instance=ExtResource( 3 )]
+[node name="Router3" parent="." index="7" instance=ExtResource( 2 )]
 
-position = Vector2( 1187, 803 )
+position = Vector2( 2161, 1175 )
 
-[node name="Router3" parent="." index="10" instance=ExtResource( 3 )]
+[node name="Router4" parent="." index="8" instance=ExtResource( 2 )]
 
-position = Vector2( 1271, 443 )
+position = Vector2( 889, 1099 )
 
-[node name="Router4" parent="." index="11" instance=ExtResource( 3 )]
+[node name="Router5" parent="." index="9" instance=ExtResource( 2 )]
 
-position = Vector2( 383, 1183 )
+position = Vector2( 385, 1143 )
 
-[node name="Router5" parent="." index="12" instance=ExtResource( 3 )]
+[node name="Router6" parent="." index="10" instance=ExtResource( 2 )]
 
-position = Vector2( 1919, 1091 )
+position = Vector2( 561, 735 )
 
-[node name="Router6" parent="." index="13" instance=ExtResource( 3 )]
+[node name="Player" parent="." index="11" instance=ExtResource( 3 )]
 
-position = Vector2( 2107, 235 )
+editor/display_folded = true
+position = Vector2( 150, 230 )
 
-[node name="Router7" parent="." index="14" instance=ExtResource( 3 )]
+[node name="Sprite" parent="Player" index="2"]
 
-position = Vector2( 1727, 639 )
+frames = ExtResource( 4 )
+animation = "idle"
+frame = 1
 
-[node name="Router8" parent="." index="15" instance=ExtResource( 3 )]
+[node name="Player2" parent="." index="12" instance=ExtResource( 3 )]
 
-position = Vector2( 987, 1259 )
+editor/display_folded = true
+position = Vector2( 786, 456 )
+player = "P2"
+
+[node name="Sprite" parent="Player2" index="2"]
+
+flip_h = true
 
 [node name="navigation" parent="." index="16" instance=ExtResource( 4 )]
 
@@ -140,3 +147,5 @@ z_index = -3
 _sections_unfolded = [ "Z Index" ]
 
 
+[editable path="Player"]
+[editable path="Player2"]

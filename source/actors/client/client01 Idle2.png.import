@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/client01 Idle2.png-a8d1c046a67436c09688e4148da871a6.stex"
+
+[deps]
+
+source_file="res://actors/client/client01 Idle2.png"
+source_md5="04626a3b866a0990f5bc6b84591c7707"
+
+dest_files=[ "res://.import/client01 Idle2.png-a8d1c046a67436c09688e4148da871a6.stex" ]
+dest_md5="8497c8fd70724084cd7efc73256620e2"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0
