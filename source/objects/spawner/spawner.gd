@@ -10,7 +10,7 @@ export (String, FILE, "*.tscn") var client_scene
 func _ready():
 	randomize()
 	$Cooldown.connect("timeout", self, "spawn_clients", [int(rand_range(min_amount, max_amount +1))])
-#	$Cooldown.set_wait_time(rand_range(min_spawn_time, max_spawn_time))
+	$Cooldown.set_wait_time(rand_range(0.5, 2.0))
 	$Cooldown.start()
 	
 func spawn_clients(amount):

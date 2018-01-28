@@ -13,6 +13,14 @@ func _process(delta):
 	seconds -= delta
 	minutes = int(floor(seconds/60))
 	$Panel/Time.set_text(time_text.format({"minutes": minutes, "seconds":seconds}))
+	
+	if seconds <= 0.0:
+		var winner 
+		if p1_score > p2_score:
+			winner = "KEK"
+		else:
+			winner = "LEL"
+		$Winner.pop_up(max(p1_score, p2_score), winner)
 func set_score(which, amount):
 	if which == "P1":
 		p1_score += amount

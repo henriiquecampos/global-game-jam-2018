@@ -1,13 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://actors/moving_character.gd" type="Script" id=1]
 
-[sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 10, 29.5 )
-
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 35.0571
@@ -26,7 +21,6 @@ speed = 100
 [node name="Shape" type="CollisionShape2D" parent="." index="0"]
 
 position = Vector2( 0, 16 )
-shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Area2D" type="Area2D" parent="." index="1"]
@@ -41,7 +35,7 @@ audio_bus_name = "Master"
 
 [node name="Shape" type="CollisionShape2D" parent="Area2D" index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="." index="2"]
 

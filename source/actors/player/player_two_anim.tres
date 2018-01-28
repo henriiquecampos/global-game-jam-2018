@@ -16,14 +16,14 @@
 [ext_resource path="res://actors/player/hack_02/Hacking/hacker 12.png" type="Texture" id=14]
 [ext_resource path="res://actors/player/hack_02/Hacking/hacker 13.png" type="Texture" id=15]
 [ext_resource path="res://actors/player/hack_02/Hacking/hacker 14.png" type="Texture" id=16]
-[ext_resource path="res://actors/player/hack_02/Walk/hacker 1.png" type="Texture" id=17]
-[ext_resource path="res://actors/player/hack_02/Walk/hacker 2.png" type="Texture" id=18]
-[ext_resource path="res://actors/player/hack_02/Walk/hacker 3.png" type="Texture" id=19]
-[ext_resource path="res://actors/player/hack_02/Walk/hacker 4.png" type="Texture" id=20]
-[ext_resource path="res://actors/player/hack_02/Defeat/hacker 2 defeat1.png" type="Texture" id=21]
-[ext_resource path="res://actors/player/hack_02/Defeat/hacker 2 defeat2.png" type="Texture" id=22]
-[ext_resource path="res://actors/player/hack_02/win/hacker 2 win1.png" type="Texture" id=23]
-[ext_resource path="res://actors/player/hack_02/win/hacker 2 win2.png" type="Texture" id=24]
+[ext_resource path="res://actors/player/hack_02/Defeat/hacker 2 defeat1.png" type="Texture" id=17]
+[ext_resource path="res://actors/player/hack_02/Defeat/hacker 2 defeat2.png" type="Texture" id=18]
+[ext_resource path="res://actors/player/hack_02/win/hacker 2 win1.png" type="Texture" id=19]
+[ext_resource path="res://actors/player/hack_02/win/hacker 2 win2.png" type="Texture" id=20]
+[ext_resource path="res://actors/player/hack_02/Walk/hacker 1.png" type="Texture" id=21]
+[ext_resource path="res://actors/player/hack_02/Walk/hacker 2.png" type="Texture" id=22]
+[ext_resource path="res://actors/player/hack_02/Walk/hacker 3.png" type="Texture" id=23]
+[ext_resource path="res://actors/player/hack_02/Walk/hacker 4.png" type="Texture" id=24]
 
 [resource]
 
@@ -38,19 +38,19 @@ animations = [ {
 "name": "hacking",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
-"loop": true,
-"name": "walking",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 21 ), ExtResource( 22 ) ],
+"frames": [ ExtResource( 17 ), ExtResource( 18 ) ],
 "loop": true,
 "name": "defeat",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 23 ), ExtResource( 24 ) ],
+"frames": [ ExtResource( 19 ), ExtResource( 20 ) ],
 "loop": true,
 "name": "win",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ) ],
+"loop": true,
+"name": "walking",
+"speed": 12.0
 } ]
 
