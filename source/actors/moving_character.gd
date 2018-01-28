@@ -12,7 +12,7 @@ func _ready():
 func movement(dir):
 	move_and_collide(dir * speed * get_physics_process_delta_time())
 	if not can_leave:
-		set_position(Vector2(clamp(position.x, 0 + 32, limit_x - 32), clamp(position.y, 0 + 32, limit_y - 32)))
+		set_position(Vector2(clamp(position.x, 0 + 8, limit_x - 8), clamp(position.y, 0 + 16, limit_y - 16)))
 
 func _on_body_entered( body ):
 	pass

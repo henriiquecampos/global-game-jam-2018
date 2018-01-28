@@ -12,6 +12,8 @@ export (SpriteFrames) var var_03
 export (SpriteFrames) var var_04
 
 onready var frames = [var_01, var_02, var_03, var_04]
+
+const MONEY = preload("res://interface/money/money.tscn")
 func _ready():
 	randomize()
 	var s = randi()%frames.size()
@@ -24,7 +26,10 @@ func _ready():
 func money_timeout():
 	if target == null:
 		return
-	$"../Scores".set_score(target.player, 100)
+	elif target.strength >= 100:
+		var m = MONEY.instance()
+		target.add_child(m)
+		$"../Scores".set_score(target.player, 100)
 
 func set_speed(value):
 	speed = value
@@ -86,6 +91,7 @@ func _on_patience_timeout():
 	leave_screen()
 	
 func leave_screen():
+	$Wander.stop()
 	$Sprite.play("walking")
 	var t = $Tween
 	var dist = (global_position.distance_to(spawner.global_position))
@@ -93,9 +99,9 @@ func leave_screen():
 	t.interpolate_method(self, "set_global_position", get_global_position(), spawner.get_global_position(),
 		time * 2, t.TRANS_LINEAR, t.EASE_IN)
 	if get_global_position().x > spawner.get_global_position().x:
-		$Sprite.scale.x = 1
-	else:
 		$Sprite.scale.x = -1
+	else:
+		$Sprite.scale.x = 1
 	$Shape.set_disabled(true)
 	t.start()
 	yield(t, "tween_completed")

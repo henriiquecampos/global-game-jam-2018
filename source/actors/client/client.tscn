@@ -10,11 +10,10 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 8, 16 )
+extents = Vector2( 8, 12 )
 
 [node name="Client" instance=ExtResource( 1 )]
 
-position = Vector2( 110, 61 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 var_01 = ExtResource( 3 )
@@ -24,8 +23,12 @@ var_04 = ExtResource( 6 )
 
 [node name="Shape" parent="." index="0"]
 
-position = Vector2( -3, 16 )
+position = Vector2( -3, 20 )
 shape = SubResource( 1 )
+
+[node name="Area2D" parent="." index="1"]
+
+_sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" parent="." index="2"]
 
@@ -36,7 +39,7 @@ _sections_unfolded = [ "Visibility" ]
 [node name="Money" type="Timer" parent="." index="3"]
 
 process_mode = 1
-wait_time = 1.0
+wait_time = 2.0
 one_shot = false
 autostart = false
 

@@ -51,6 +51,6 @@ animations = [ {
 "frames": [ ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ) ],
 "loop": true,
 "name": "walking",
-"speed": 8.0
+"speed": 12.0
 } ]
 

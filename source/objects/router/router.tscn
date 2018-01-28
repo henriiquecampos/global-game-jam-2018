@@ -18,20 +18,20 @@ extents = Vector2( 16, 11 )
 custom_solver_bias = 0.0
 radius = 191.003
 
-[sub_resource type="Curve" id=4]
+[sub_resource type="Curve" id=3]
 
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
 _data = [ Vector2( 0, 0.242188 ), 0.0, 0.785495, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=5]
+[sub_resource type="CurveTexture" id=4]
 
 flags = 4
 width = 2048
-curve = SubResource( 4 )
+curve = SubResource( 3 )
 
-[sub_resource type="ParticlesMaterial" id=6]
+[sub_resource type="ParticlesMaterial" id=5]
 
 render_priority = 0
 trail_divisor = 1
@@ -61,7 +61,7 @@ angle = 0.0
 angle_random = 0.0
 scale = 2.95
 scale_random = 0.0
-scale_curve = SubResource( 5 )
+scale_curve = SubResource( 4 )
 color = Color( 1, 1, 1, 1 )
 hue_variation = 0.0
 hue_variation_random = 0.0
@@ -72,7 +72,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Emission Shape", "Scale" ]
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=6]
 
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
@@ -86,7 +86,7 @@ animations = [ {
 "speed": 4.0
 } ]
 
-[node name="Router" type="StaticBody2D" groups=[
+[node name="Router" type="StaticBody2D" index="0" groups=[
 "routers",
 ]]
 
@@ -100,7 +100,7 @@ bounce = 0.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 player = "NONE"
-charging_time = 8.0
+charging_time = 4.0
 
 [node name="Shape" type="CollisionShape2D" parent="." index="0"]
 
@@ -138,7 +138,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 6 )
+process_material = SubResource( 5 )
 texture = null
 normal_map = null
 h_frames = 1
@@ -147,8 +147,9 @@ _sections_unfolded = [ "Process Material", "Textures", "Visibility" ]
 
 [node name="Sprite" type="AnimatedSprite" parent="." index="3"]
 
-frames = SubResource( 3 )
+frames = SubResource( 6 )
 animation = "idle"
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform" ]
 

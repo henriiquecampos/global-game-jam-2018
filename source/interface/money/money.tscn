@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://fonts/Kenney Mini Square.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 20
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 1 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="GDScript" id=2]
+
+script/source = "extends Label
+export (Color) var final_color
+func _ready():
+	var t = $Tween
+	
+	t.interpolate_property(self, \"rect_position\", get_position(), get_position() + Vector2(0, -25), 1.0, t.TRANS_BACK, t.EASE_IN_OUT)
+	t.interpolate_property(self, \"self_modulate\", get_self_modulate(), final_color, 1.0, t.TRANS_LINEAR, t.EASE_OUT)
+	t.start()
+	yield(t, \"tween_completed\")
+	queue_free()"
+
+[node name="Money" type="Label"]
+
+self_modulate = Color( 0, 0.917969, 0.229492, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -48.0
+margin_top = -48.0
+margin_right = 52.0
+margin_bottom = -23.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "+ $ 100,00"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script = SubResource( 2 )
+_sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
+final_color = Color( 0, 0.917647, 0.227451, 0.0386667 )
+
+[node name="Tween" type="Tween" parent="." index="0"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+
