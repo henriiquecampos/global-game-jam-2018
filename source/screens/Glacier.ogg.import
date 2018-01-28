@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Glacier.ogg-873386ba45ecf6630238f482d87e8019.oggstr"
+
+[deps]
+
+source_file="res://screens/Glacier.ogg"
+source_md5="13244c86e41baf27d57a718d03ef040f"
+
+dest_files=[ "res://.import/Glacier.ogg-873386ba45ecf6630238f482d87e8019.oggstr" ]
+dest_md5="925a188d549ae63b24658237cc145591"
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,10 +1,42 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://screens/abstract_screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://screens/main_screen/main_screen.gd" type="Script" id=2]
 [ext_resource path="res://interface/Logo Title.png" type="Texture" id=3]
+[ext_resource path="res://interface/loading.ogg" type="AudioStream" id=4]
 
-[node name="MainScreen" instance=ExtResource( 1 )]
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends VBoxContainer
+
+var click_01 = preload(\"res://interface/click_01.ogg\")
+var click_02 = preload(\"res://interface/click_02.ogg\")
+
+func _on_play_pressed():
+	$SFX.set_stream(click_02)
+	$SFX.play()
+
+
+func _on_quit_pressed():
+	$SFX.set_stream(click_02)
+	$SFX.play()
+
+
+func _on_play_button_up():
+	$SFX.set_stream(click_01)
+	$SFX.play()
+
+
+func _on_quit_button_up():
+	$SFX.set_stream(click_01)
+	$SFX.play()
+
+
+func _on_focus_exited():
+	pass
+"
+
+[node name="MainScreen" index="0" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 screen_path = "res://interface/tutoring/tutoring.tscn"
@@ -20,9 +52,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 255.0
-margin_top = 1.0
+margin_top = -67.0
 margin_right = 1049.0
-margin_bottom = 448.0
+margin_bottom = 380.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
@@ -39,10 +71,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 473.0
-margin_top = 398.0
-margin_right = 829.0
-margin_bottom = 703.0
+margin_left = 480.0
+margin_top = 336.0
+margin_right = 822.0
+margin_bottom = 629.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -51,15 +83,14 @@ size_flags_vertical = 1
 
 [node name="Menu" type="VBoxContainer" parent="." index="5"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 500.0
-margin_top = 439.0
+margin_top = 410.0
 margin_right = 797.0
-margin_bottom = 662.0
+margin_bottom = 555.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
@@ -67,6 +98,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_constants/separation = 25
 alignment = 0
+script = SubResource( 1 )
 _sections_unfolded = [ "Size Flags", "custom_constants" ]
 
 [node name="Play" type="Button" parent="Menu" index="0"]
@@ -76,7 +108,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 297.0
-margin_bottom = 57.0
+margin_bottom = 60.0
 rect_pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
@@ -91,38 +123,15 @@ text = "Play"
 flat = false
 align = 1
 
-[node name="Credits" type="Button" parent="Menu" index="1"]
+[node name="Quit" type="Button" parent="Menu" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 82.0
+margin_top = 85.0
 margin_right = 297.0
-margin_bottom = 139.0
-rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Credits"
-flat = false
-align = 1
-
-[node name="Quit" type="Button" parent="Menu" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 164.0
-margin_right = 297.0
-margin_bottom = 223.0
+margin_bottom = 145.0
 rect_pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
@@ -137,7 +146,46 @@ text = "Quit"
 flat = false
 align = 1
 
+[node name="SFX" type="AudioStreamPlayer" parent="Menu" index="2"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "SFX"
+
+[node name="Label" type="Label" parent="." index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 61.0
+margin_top = 667.0
+margin_right = 1219.0
+margin_bottom = 697.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "A game by: Henrique Campos & Ignacio Moura & Suami Abdalla"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[connection signal="button_up" from="Menu/Play" to="Menu" method="_on_play_button_up"]
+
+[connection signal="focus_exited" from="Menu/Play" to="Menu" method="_on_focus_exited"]
+
+[connection signal="pressed" from="Menu/Play" to="Menu" method="_on_play_pressed"]
+
 [connection signal="pressed" from="Menu/Play" to="." method="next_screen"]
+
+[connection signal="button_up" from="Menu/Quit" to="Menu" method="_on_quit_button_up"]
+
+[connection signal="focus_exited" from="Menu/Quit" to="Menu" method="_on_focus_exited"]
 
 [connection signal="pressed" from="Menu/Quit" to="." method="quit"]
 

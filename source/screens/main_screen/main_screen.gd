@@ -18,3 +18,7 @@ func _on_sfx_value_changed( value ):
 
 func quit():
 	get_tree().quit()
+
+
+func _on_quit_button_up():
+	pass # replace with function body

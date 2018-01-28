@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/charging.ogg-85a289ecc54bbc701792dca919fac209.oggstr"
+
+[deps]
+
+source_file="res://objects/router/charging.ogg"
+source_md5="527796d32ebfcfd9c1695fca2ec012ad"
+
+dest_files=[ "res://.import/charging.ogg-85a289ecc54bbc701792dca919fac209.oggstr" ]
+dest_md5="a20809161422f2f7ab89f408181f795c"
+
+[params]
+
+loop=true
+loop_offset=0

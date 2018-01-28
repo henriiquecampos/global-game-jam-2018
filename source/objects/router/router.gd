@@ -15,9 +15,12 @@ func set_state(value):
 	state = CHARGE
 	$Sprite.play("charging")
 	$CaptureTime.start()
+	$SFX.set_stream(load("res://objects/router/charging.ogg"))
+	$SFX.play()
 	yield($CaptureTime, "timeout")
 	$Sprite.play("idle")
 	emit_signal("captured")
+	$SFX.stop()
 	state = IDLE
 	if get_player() == "P1":
 		$Particles2D.set_self_modulate(Color("00ffff"))
@@ -42,3 +45,6 @@ func get_player():
 
 func _on_charge_bar_changed( value ):
 	strength = value
+	if value == 100:
+		$SFX.set_stream(load("res://objects/router/finished_charging.ogg"))
+		$SFX.play()

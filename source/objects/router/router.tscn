@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://objects/router/router.gd" type="Script" id=1]
 [ext_resource path="res://objects/router/Router1.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://objects/router/Router4.png" type="Texture" id=5]
 [ext_resource path="res://objects/router/Bar Empty.png" type="Texture" id=6]
 [ext_resource path="res://objects/router/Bar Full.png" type="Texture" id=7]
+[ext_resource path="res://objects/router/finished_charging.ogg" type="AudioStream" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -86,7 +87,7 @@ animations = [ {
 "speed": 4.0
 } ]
 
-[node name="Router" type="StaticBody2D" index="0" groups=[
+[node name="Router" type="StaticBody2D" groups=[
 "routers",
 ]]
 
@@ -198,6 +199,16 @@ playback_speed = 1.0
 playback/active = false
 playback/repeat = false
 playback/speed = 1.0
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="." index="7"]
+
+stream = ExtResource( 8 )
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "SFX"
+area_mask = 1
 
 [connection signal="value_changed" from="ProgressBar" to="." method="_on_charge_bar_changed"]
 
