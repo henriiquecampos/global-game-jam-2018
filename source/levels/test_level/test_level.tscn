@@ -69,28 +69,28 @@ script = SubResource( 2 )
 
 [node name="Spawn" parent="." index="1" instance=ExtResource( 1 )]
 
-position = Vector2( 416, 32 )
+position = Vector2( 416, 96 )
 min_spawn_time = 15.0
 max_spawn_time = 30.0
 max_amount = 3
 
 [node name="Spawn2" parent="." index="2" instance=ExtResource( 1 )]
 
-position = Vector2( 1280, 352 )
+position = Vector2( 1256, 352 )
 min_spawn_time = 15.0
 max_spawn_time = 30.0
 max_amount = 3
 
 [node name="Spawn3" parent="." index="3" instance=ExtResource( 1 )]
 
-position = Vector2( 0, 360 )
+position = Vector2( 24, 360 )
 min_spawn_time = 15.0
 max_spawn_time = 30.0
 max_amount = 3
 
 [node name="Spawn4" parent="." index="4" instance=ExtResource( 1 )]
 
-position = Vector2( 864, 32 )
+position = Vector2( 864, 96 )
 min_spawn_time = 15.0
 max_spawn_time = 30.0
 max_amount = 3
@@ -135,6 +135,7 @@ shape = SubResource( 3 )
 
 frames = ExtResource( 4 )
 animation = "idle"
+frame = 1
 
 [node name="Player2" parent="." index="13" instance=ExtResource( 3 )]
 
@@ -149,7 +150,6 @@ shape = SubResource( 3 )
 
 scale = Vector2( -1, 1 )
 animation = "idle"
-frame = 1
 
 [node name="Map" parent="." index="14" instance=ExtResource( 5 )]
 

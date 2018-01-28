@@ -6,7 +6,7 @@
 [node name="MainScreen" index="0" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
-screen_path = "res://screens/gameplay/gameplay_screen.tscn"
+screen_path = "res://interface/tutoring/tutoring.tscn"
 
 [node name="TextureRect" type="TextureRect" parent="." index="3"]
 

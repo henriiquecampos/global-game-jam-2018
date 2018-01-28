@@ -1,13 +1,13 @@
 [gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://interface/tutoring/tutoring.gd" type="Script" id=1]
-[ext_resource path="res://actors/player/player_one_anim.tres" type="SpriteFrames" id=2]
-[ext_resource path="res://actors/player/player_two_anim.tres" type="SpriteFrames" id=3]
-[ext_resource path="res://objects/router/Router3.png" type="Texture" id=4]
-[ext_resource path="res://objects/router/Router4.png" type="Texture" id=5]
-[ext_resource path="res://objects/router/Router1.png" type="Texture" id=6]
-[ext_resource path="res://objects/router/Router2.png" type="Texture" id=7]
-[ext_resource path="res://screens/theme.tres" type="Theme" id=8]
+[ext_resource path="res://screens/theme.tres" type="Theme" id=2]
+[ext_resource path="res://actors/player/player_one_anim.tres" type="SpriteFrames" id=3]
+[ext_resource path="res://actors/player/player_two_anim.tres" type="SpriteFrames" id=4]
+[ext_resource path="res://objects/router/Router3.png" type="Texture" id=5]
+[ext_resource path="res://objects/router/Router4.png" type="Texture" id=6]
+[ext_resource path="res://objects/router/Router1.png" type="Texture" id=7]
+[ext_resource path="res://objects/router/Router2.png" type="Texture" id=8]
 [ext_resource path="res://actors/client/client_01.tres" type="SpriteFrames" id=9]
 [ext_resource path="res://actors/client/client_02.tres" type="SpriteFrames" id=10]
 [ext_resource path="res://actors/client/client_03.tres" type="SpriteFrames" id=11]
@@ -17,12 +17,12 @@
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "charging",
 "speed": 4.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "idle",
 "speed": 4.0
@@ -82,7 +82,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Emission Shape", "Scale" ]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=11]
 
 resource_name = "type"
 length = 3.0
@@ -101,7 +101,7 @@ tracks/0/keys = {
 "values": [ 0.0, 1.0 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=12]
 
 resource_name = "00"
 length = 1.0
@@ -187,7 +187,7 @@ tracks/5/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=13]
 
 resource_name = "02"
 length = 3.0
@@ -266,7 +266,7 @@ tracks/5/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=14]
 
 resource_name = "03"
 length = 3.0
@@ -357,9 +357,8 @@ tracks/6/keys = {
 "values": [ false, true ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=15]
 
-resource_name = "04"
 length = 3.0
 loop = false
 step = 0.1
@@ -508,9 +507,8 @@ tracks/11/keys = {
 "values": [ "idle", "walking", "idle" ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=16]
 
-resource_name = "05"
 length = 0.6
 loop = true
 step = 0.1
@@ -551,9 +549,8 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=17]
 
-resource_name = "06"
 length = 1.0
 loop = false
 step = 0.1
@@ -570,7 +567,7 @@ tracks/0/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="DynamicFont" id=18]
 
 size = 35
 use_mipmaps = false
@@ -586,7 +583,7 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 script = ExtResource( 1 )
-texts = PoolStringArray( "In this game you play as a crypto anarchist hacking wifi routers to mine JAM Coins (XJC) using other\'s devices", "You can move using joysticks\'s left stick in all 8 directions", "To hack a router simply get close to it and press the action button", "After hacking the router it will emit an aura with the player\'s color", "At some point some people will be attracted by the router", "When they do use the router, they will be mining XJC for you, giving you lots of money" )
+texts = PoolStringArray( "In this game you play as a crypto anarchist hacking wifi routers to mine JAM Coins (XJC) using other\'s devices", "You can move using joysticks\'s left stick in all 8 directions", "To hack a router simply get close to it and press the action button", "After hacking the router it will emit an aura with the player\'s color", "At some point people will be attracted by the router", "When they do use the router, they will be mining XJC for you, giving you lots of money", "The player with more money at the end of the round wins" )
 
 [node name="Fade" type="ColorRect" parent="." index="0"]
 
@@ -601,15 +598,17 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = ExtResource( 2 )
 color = Color( 0.0976563, 0.0976563, 0.0976563, 1 )
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Rect", "Theme" ]
 
 [node name="P1" type="AnimatedSprite" parent="." index="1"]
 
 position = Vector2( 106, 390 )
 scale = Vector2( 3.25, 3.25 )
-frames = ExtResource( 2 )
+frames = ExtResource( 3 )
 animation = "idle"
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform" ]
 
@@ -617,8 +616,9 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 1174, 390 )
 scale = Vector2( 3.25, 3.25 )
-frames = ExtResource( 3 )
+frames = ExtResource( 4 )
 animation = "idle"
+frame = 1
 playing = true
 flip_h = true
 _sections_unfolded = [ "Transform" ]
@@ -629,7 +629,6 @@ position = Vector2( 648, 392 )
 scale = Vector2( 3.0625, 3.0625 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 1
 playing = true
 _sections_unfolded = [ "Transform" ]
 
@@ -670,7 +669,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-theme = ExtResource( 8 )
+theme = ExtResource( 2 )
 text = "text texttext texttext texttext texttext texttext texttext texttext texttext texttext texttext texttext texttext texttext texttext texttext text"
 align = 1
 valign = 1
@@ -678,7 +677,7 @@ autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Theme", "custom_fonts" ]
+_sections_unfolded = [ "Material", "Theme", "Visibility", "custom_fonts" ]
 
 [node name="Animator" type="AnimationPlayer" parent="Label" index="0"]
 
@@ -687,7 +686,7 @@ autoplay = "type"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/type = SubResource( 2 )
+anims/type = SubResource( 11 )
 blend_times = [  ]
 
 [node name="Tween" type="Tween" parent="." index="5"]
@@ -706,13 +705,13 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/00 = SubResource( 4 )
+anims/00 = SubResource( 12 )
 anims/01 = SubResource( 3 )
-anims/02 = SubResource( 6 )
-anims/03 = SubResource( 7 )
-anims/04 = SubResource( 11 )
-anims/05 = SubResource( 12 )
-anims/06 = SubResource( 14 )
+anims/02 = SubResource( 13 )
+anims/03 = SubResource( 14 )
+anims/04 = SubResource( 15 )
+anims/05 = SubResource( 16 )
+anims/06 = SubResource( 17 )
 blend_times = [  ]
 
 [node name="Sprite" type="AnimatedSprite" parent="." index="7"]
@@ -774,7 +773,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 18 )
 text = "+ $ 100,00"
 align = 1
 valign = 1
