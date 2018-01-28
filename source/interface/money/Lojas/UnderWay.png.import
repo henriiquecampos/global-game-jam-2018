@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Dog do Tião.png-a67749f1593d70a51221e80adc484e5e.stex"
+path="res://.import/UnderWay.png-b4e283efc49717423de53d8804e743b7.stex"
 
 [deps]
 
-source_file="res://areas/tilemap/Scenario/Lojas/Dog do Tião.png"
-source_md5="9061e86bb7ea9ffc9abb1e944073c231"
+source_file="res://interface/money/Lojas/UnderWay.png"
+source_md5="833bbc6c370eab927b7810f438abf999"
 
-dest_files=[ "res://.import/Dog do Tião.png-a67749f1593d70a51221e80adc484e5e.stex" ]
-dest_md5="2f71b8e4ccb7cc9a48086fe044a0a5d9"
+dest_files=[ "res://.import/UnderWay.png-b4e283efc49717423de53d8804e743b7.stex" ]
+dest_md5="8d028a769005792d2c43c4eaea3798e3"
 
 [params]
 

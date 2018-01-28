@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/WcDonnalds.png-94664da5649afa8b5fd011b412d5de54.stex"
+path="res://.import/Dog do Tião.png-75165f92328274aac4376b9a94c7fce2.stex"
 
 [deps]
 
-source_file="res://areas/tilemap/Scenario/Lojas/WcDonnalds.png"
-source_md5="b849acedf5b2a45d85b042962dff114b"
+source_file="res://interface/money/Lojas/Dog do Tião.png"
+source_md5="9061e86bb7ea9ffc9abb1e944073c231"
 
-dest_files=[ "res://.import/WcDonnalds.png-94664da5649afa8b5fd011b412d5de54.stex" ]
-dest_md5="83cceed73c83b8b9d532f4233276e610"
+dest_files=[ "res://.import/Dog do Tião.png-75165f92328274aac4376b9a94c7fce2.stex" ]
+dest_md5="2f71b8e4ccb7cc9a48086fe044a0a5d9"
 
 [params]
 

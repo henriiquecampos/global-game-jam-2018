@@ -26,9 +26,10 @@ func _ready():
 func money_timeout():
 	if target == null:
 		return
-	var m = MONEY.instance()
-	target.add_child(m)
-	$"../Scores".set_score(target.player, 100)
+	elif target.strength >= 100:
+		var m = MONEY.instance()
+		target.add_child(m)
+		$"../Scores".set_score(target.player, 100)
 
 func set_speed(value):
 	speed = value
