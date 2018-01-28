@@ -2,7 +2,7 @@ extends Node
 onready var init_text = get_node("Panel/P1").get_text()
 var p1_score = 0
 var p2_score = 0
-var seconds = 180
+var seconds = 30
 var minutes = seconds/60
 onready var time_text = $Panel/Time.get_text()
 func _ready():

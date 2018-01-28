@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://interface/scores/scores.gd" type="Script" id=1]
+[ext_resource path="res://screens/theme.tres" type="Theme" id=2]
 
 [sub_resource type="GDScript" id=1]
 
@@ -13,7 +14,19 @@ func pop_up(highscore, winner):
 	t.start()
 	yield(t, \"tween_completed\")
 	$Control/Label.set_text(\"Player %s won with $ %s,00\"%[winner, highscore])
-	$Control/Label/Animator.play(\"type\")"
+	$Control/Label/Animator.play(\"type\")
+	$Menu.show()
+	$Menu/Retry.grab_focus()
+	
+
+func _on_quit_pressed():
+	get_tree().set_pause(false)
+	get_tree().change_scene(\"res://screens/main_screen/main_screen.tscn\")
+
+func _on_retry_pressed():
+	get_tree().set_pause(false)
+	get_tree().reload_current_scene()
+"
 
 [sub_resource type="Animation" id=2]
 
@@ -34,7 +47,7 @@ tracks/0/keys = {
 "values": [ 0.0, 1.0 ]
 }
 
-[node name="Scores" type="Node"]
+[node name="Scores" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -44,9 +57,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 616.0
+margin_top = 584.0
 margin_right = 1280.0
-margin_bottom = 752.0
+margin_bottom = 720.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -60,10 +73,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 16.0
+margin_left = 96.0
 margin_top = 16.0
-margin_right = 160.0
-margin_bottom = 56.0
+margin_right = 312.0
+margin_bottom = 48.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
 mouse_default_cursor_shape = 0
@@ -84,9 +97,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1136.0
+margin_left = 968.0
 margin_top = 16.0
-margin_right = 1248.0
+margin_right = 1192.0
 margin_bottom = 48.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
@@ -150,7 +163,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-_sections_unfolded = [ "Visibility" ]
+theme = ExtResource( 2 )
+_sections_unfolded = [ "Theme", "Visibility" ]
 
 [node name="ColorRect" type="ColorRect" parent="Winner/Control" index="0"]
 
@@ -173,10 +187,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 400.0
-margin_top = 288.0
-margin_right = 840.0
-margin_bottom = 440.0
+margin_left = 432.0
+margin_top = 272.0
+margin_right = 872.0
+margin_bottom = 424.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
 mouse_default_cursor_shape = 0
@@ -206,5 +220,75 @@ playback_speed = 1.0
 playback/active = false
 playback/repeat = false
 playback/speed = 1.0
+
+[node name="Menu" type="VBoxContainer" parent="Winner" index="2"]
+
+pause_mode = 2
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 536.0
+margin_top = 424.0
+margin_right = 760.0
+margin_bottom = 536.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+alignment = 0
+_sections_unfolded = [ "Pause", "Theme", "custom_constants" ]
+
+[node name="Retry" type="Button" parent="Winner/Menu" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 224.0
+margin_bottom = 47.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Play Again"
+flat = false
+align = 1
+
+[node name="Back" type="Button" parent="Winner/Menu" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 64.0
+margin_right = 224.0
+margin_bottom = 112.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Back to Menu"
+flat = false
+align = 1
+
+[connection signal="pressed" from="Winner/Menu/Retry" to="Winner" method="_on_retry_pressed"]
+
+[connection signal="pressed" from="Winner/Menu/Back" to="Winner" method="_on_quit_pressed"]
 
 
