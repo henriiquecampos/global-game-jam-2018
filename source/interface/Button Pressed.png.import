@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Button Pressed.png-726068015cae40d11ee23feae793d6a3.stex"
+
+[deps]
+
+source_file="res://interface/Button Pressed.png"
+source_md5="767bccab07a0a1f9e0ccda920c1c7f1b"
+
+dest_files=[ "res://.import/Button Pressed.png-726068015cae40d11ee23feae793d6a3.stex" ]
+dest_md5="d0614581a274071f9ea0e2db2c164c67"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

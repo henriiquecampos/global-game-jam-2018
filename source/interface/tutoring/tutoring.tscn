@@ -575,7 +575,7 @@ use_filter = false
 font_data = ExtResource( 13 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Tutoring" type="CanvasLayer"]
+[node name="Tutoring" type="CanvasLayer" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -583,7 +583,7 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 script = ExtResource( 1 )
-texts = PoolStringArray( "In this game you play as a crypto anarchist hacking wifi routers to mine JAM Coins (XJC) using other\'s devices", "You can move using joysticks\'s left stick in all 8 directions", "To hack a router simply get close to it and press the action button", "After hacking the router it will emit an aura with the player\'s color", "At some point people will be attracted by the router", "When they do use the router, they will be mining XJC for you, giving you lots of money", "The player with more money at the end of the round wins" )
+texts = PoolStringArray( "In Mining Mall you play as a crypto anarchist hacking wifi routers to mine JAM Coins (XJC) using other\'s devices", "You can move using joysticks\'s left stick in all 8 directions", "To hack a router simply get close to it and press the action button", "After hacking the router it will emit an aura with the player\'s color", "At some point people will be attracted by the router", "When they do use the router, they will be mining XJC for you, giving you lots of money", "The player with more money at the end of the round wins" )
 
 [node name="Fade" type="ColorRect" parent="." index="0"]
 
