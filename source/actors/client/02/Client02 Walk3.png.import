@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Client02 Walk3.png-66cfd10761bde48bccb38e6d8eadfb86.stex"
+
+[deps]
+
+source_file="res://actors/client/02/Client02 Walk3.png"
+source_md5="41c2d672244280d55cb566f1621344d7"
+
+dest_files=[ "res://.import/Client02 Walk3.png-66cfd10761bde48bccb38e6d8eadfb86.stex" ]
+dest_md5="e5bef9e502d8c7a4fceb6f512190c1a7"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

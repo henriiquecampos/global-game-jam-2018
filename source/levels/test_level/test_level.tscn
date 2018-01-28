@@ -28,7 +28,7 @@ script/source = "extends Camera2D
 func _ready():
 	print(get_viewport().size)"
 
-[node name="TestLevel" type="YSort" index="0" groups=[
+[node name="TestLevel" type="YSort" groups=[
 "level",
 ]]
 
@@ -129,12 +129,9 @@ animation = "idle"
 
 [node name="Player2" parent="." index="13" instance=ExtResource( 3 )]
 
+editor/display_folded = true
 position = Vector2( 1256, 216 )
 player = "P2"
-
-[node name="Sprite" parent="Player2" index="2"]
-
-frame = 0
 
 [node name="Scores" parent="." index="14" instance=ExtResource( 5 )]
 

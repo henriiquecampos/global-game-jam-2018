@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://actors/moving_character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://actors/client/client.gd" type="Script" id=2]
 [ext_resource path="res://actors/client/client_01.tres" type="SpriteFrames" id=3]
+[ext_resource path="res://actors/client/client_02.tres" type="SpriteFrames" id=4]
+[ext_resource path="res://actors/client/client_03.tres" type="SpriteFrames" id=5]
+[ext_resource path="res://actors/client/client_04.tres" type="SpriteFrames" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -11,8 +14,13 @@ extents = Vector2( 8, 16 )
 
 [node name="Client" instance=ExtResource( 1 )]
 
+position = Vector2( 110, 61 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
+var_01 = ExtResource( 3 )
+var_02 = ExtResource( 4 )
+var_03 = ExtResource( 5 )
+var_04 = ExtResource( 6 )
 
 [node name="Shape" parent="." index="0"]
 
@@ -21,7 +29,6 @@ shape = SubResource( 1 )
 
 [node name="Sprite" parent="." index="2"]
 
-frames = ExtResource( 3 )
 animation = "idle"
 playing = true
 _sections_unfolded = [ "Visibility" ]

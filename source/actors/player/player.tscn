@@ -29,6 +29,7 @@ shape = SubResource( 1 )
 
 frames = ExtResource( 3 )
 animation = "win"
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform" ]
 
