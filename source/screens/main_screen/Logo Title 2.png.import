@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Logo Title 2.png-a5bfb396a217b252b33f6ed209c92c26.stex"
+
+[deps]
+
+source_file="res://screens/main_screen/Logo Title 2.png"
+source_md5="74031233fc126a74dbf9e498ea7a975f"
+
+dest_files=[ "res://.import/Logo Title 2.png-a5bfb396a217b252b33f6ed209c92c26.stex" ]
+dest_md5="cdb8f33c2f39119e8801c3a49ffba4ea"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0
