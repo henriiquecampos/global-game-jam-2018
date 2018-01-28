@@ -17,6 +17,7 @@ func _process(delta):
 		else:
 			$Label/Animator.seek($Label/Animator.current_animation.length())
 			$Animator.seek($Animator.current_animation.length())
+			next = true
 
 func _next_session(session):
 	if session < texts.size():

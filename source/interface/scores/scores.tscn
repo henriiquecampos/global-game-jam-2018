@@ -53,7 +53,7 @@ tracks/0/keys = {
 "values": [ 0.0, 1.0 ]
 }
 
-[node name="Scores" type="Node2D" index="0"]
+[node name="Scores" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -298,7 +298,7 @@ align = 1
 [node name="SFX" type="AudioStreamPlayer" parent="Winner/Menu" index="2"]
 
 stream = ExtResource( 3 )
-volume_db = 0.0
+volume_db = -8.0
 autoplay = false
 mix_target = 0
 bus = "SFX"

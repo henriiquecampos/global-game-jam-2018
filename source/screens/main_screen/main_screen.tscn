@@ -36,7 +36,7 @@ func _on_focus_exited():
 	pass
 "
 
-[node name="MainScreen" index="0" instance=ExtResource( 1 )]
+[node name="MainScreen" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 screen_path = "res://interface/tutoring/tutoring.tscn"
