@@ -13,6 +13,10 @@ config_version=3
 config/name="Global Game Jam"
 config/icon="res://icon.png"
 
+[autoload]
+
+bgm="*res://screens/bgm.tscn"
+
 [display]
 
 window/size/width=1280
