@@ -98,4 +98,5 @@ P2_ACTION=[ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resou
 
 [rendering]
 
+environment/default_clear_color=Color( 0.196078, 0.156863, 0.231373, 1 )
 environment/default_environment="res://default_env.tres"

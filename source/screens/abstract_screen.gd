@@ -2,6 +2,8 @@ extends Control
 export (String, FILE, "*.tscn") var screen_path
 
 func _ready():
+	$SFX.set_stream(load("res://interface/finished.ogg"))
+	$SFX.play()
 	var tw = $Tween
 	var tm = $Timer
 	var tn = $TransLayer/Transition
@@ -18,6 +20,8 @@ func next_screen(next_screen = screen_path):
 		0.5, tw.TRANS_LINEAR, tw.EASE_OUT)
 	tw.start()
 	yield(tw, "tween_completed")
+	$SFX.set_stream(load("res://interface/loading.ogg"))
+	$SFX.play()
 	tm.start()
 	yield(tm, "timeout")
 	get_tree().change_scene(next_screen)
