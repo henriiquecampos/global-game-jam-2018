@@ -2,7 +2,7 @@ extends Node
 onready var init_text = get_node("Panel/P1").get_text()
 var p1_score = 0
 var p2_score = 0
-var seconds = 30
+var seconds = 120
 var minutes = seconds/60
 onready var time_text = $Panel/Time.get_text()
 func _ready():
@@ -11,8 +11,6 @@ func _ready():
 	
 func _process(delta):
 	seconds -= delta
-	minutes = int(floor(seconds/60))
-	$Panel/Time.set_text(time_text.format({"minutes": minutes, "seconds":seconds}))
 	
 	if seconds <= 0.0:
 		var winner 

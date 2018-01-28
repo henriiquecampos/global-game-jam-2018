@@ -10,8 +10,10 @@ config_version=3
 
 [application]
 
-config/name="Global Game Jam"
+config/name="Mining Mall"
+run/main_scene="res://screens/main_screen/main_screen.tscn"
 config/icon="res://icon.png"
+run/hide=false
 
 [autoload]
 

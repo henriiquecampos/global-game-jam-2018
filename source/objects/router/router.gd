@@ -18,7 +18,6 @@ func set_state(value):
 	$SFX.set_stream(load("res://objects/router/charging.ogg"))
 	$SFX.play()
 	yield($CaptureTime, "timeout")
-	$Sprite.play("idle")
 	emit_signal("captured")
 	$SFX.stop()
 	state = IDLE
@@ -46,5 +45,6 @@ func get_player():
 func _on_charge_bar_changed( value ):
 	strength = value
 	if value == 100:
+		$Sprite.play("idle")
 		$SFX.set_stream(load("res://objects/router/finished_charging.ogg"))
 		$SFX.play()
