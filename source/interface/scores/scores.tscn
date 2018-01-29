@@ -53,7 +53,7 @@ tracks/0/keys = {
 "values": [ 0.0, 1.0 ]
 }
 
-[node name="Scores" type="Node2D"]
+[node name="Scores" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -229,7 +229,26 @@ playback/active = false
 playback/repeat = false
 playback/speed = 1.0
 
-[node name="Menu" type="VBoxContainer" parent="Winner" index="2"]
+[node name="MenuPanel" type="Panel" parent="Winner" index="2"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 528.0
+margin_top = 374.0
+margin_right = 768.0
+margin_bottom = 579.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+_sections_unfolded = [ "Theme" ]
+
+[node name="Menu" type="VBoxContainer" parent="Winner" index="3"]
 
 pause_mode = 2
 visible = false
@@ -257,7 +276,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 224.0
-margin_bottom = 47.0
+margin_bottom = 54.0
 rect_pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
@@ -278,7 +297,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 64.0
+margin_top = 58.0
 margin_right = 224.0
 margin_bottom = 112.0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -302,25 +321,6 @@ volume_db = -8.0
 autoplay = false
 mix_target = 0
 bus = "SFX"
-
-[node name="MenuPanel" type="Panel" parent="." index="2"]
-
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 528.0
-margin_top = 374.0
-margin_right = 768.0
-margin_bottom = 579.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 2 )
-_sections_unfolded = [ "Theme" ]
 
 [connection signal="pressed" from="Winner/Menu/Retry" to="Winner" method="_on_retry_pressed"]
 
